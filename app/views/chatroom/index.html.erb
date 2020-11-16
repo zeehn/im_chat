@@ -8,21 +8,13 @@
   <div class="twelve wide column">
     <div class="ui fluid raised card set-height">
       <div class="ui content">
-        <% @messages.each do |message| %>
-        <div class="ui feed">
-          <div class="event">
-            <div class="content">
-              <div class="summary">
-                <em><%= message.user.username %></em>: <%= message.body %>
-              </div>
-            </div>
-          </div>
+        <div class="ui feed" id="message_container">
+          <%= render @messages %>
         </div>
-        <% end %>
       </div>
     </div>
     <div class="extra content">
-      <%= form_with(url: message_path, scope: :message, local: true) do |f| %>
+      <%= form_with(url: message_path, scope: :message, remote: true) do |f| %>
       <div class="field">
         <div class="ui fluid icon right input">
           <%= f.text_field :body %>
