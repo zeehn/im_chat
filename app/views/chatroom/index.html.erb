@@ -8,51 +8,31 @@
   <div class="twelve wide column">
     <div class="ui fluid raised card set-height">
       <div class="ui content">
+        <% @messages.each do |message| %>
         <div class="ui feed">
           <div class="event">
             <div class="content">
               <div class="summary">
-                <em>Elliot Fu</em>: added as a friend
-              </div>
-            </div>
-          </div>
-          <div class="event">
-            <div class="content">
-              <div class="summary">
-                <em>Stevie Feliciano</em>: added Elliot Fu as a friend
-              </div>
-            </div>
-          </div>
-          <div class="event">
-            <div class="content">
-              <div class="summary">
-                <em>Helen Troy</em>: added Christian Rocha as a friend
-              </div>
-            </div>
-          </div>
-          <div class="event">
-            <div class="content">
-              <div class="summary">
-                <em>Christian Rocha</em>: signed up for the site.
+                <em><%= message.user.username %></em>: <%= message.body %>
               </div>
             </div>
           </div>
         </div>
-      </div>
-      <div class="extra content">
-        <form class="ui reply form">
-          <div class="field">
-            <div class="ui fluid icon right input">
-              <input type="text">
-              <i class="bordered inverted green edit icon"></i>
-            </div>
-
-          </div>
-
-        </form>
+        <% end %>
       </div>
     </div>
+    <div class="extra content">
+      <form class="ui reply form">
+        <div class="field">
+          <div class="ui fluid icon right input">
+            <input type="text">
+            <i class="bordered inverted green edit icon"></i>
+          </div>
+        </div>
+      </form>
+    </div>
   </div>
+
 
 
   <div class="four wide column">
